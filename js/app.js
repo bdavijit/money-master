@@ -45,7 +45,7 @@ function ClickCalculate() {
     Balance = stringTOFloat("Income") - Expenses;
         //Error handling
         if(Balance < 0){
-            alert("Your income is not allowed the expenses");
+            alert("Your income has not allowed the expenses");
          }else{
             importByID("Total_Expenses").innerText = Expenses.toFixed(2);
             importByID("Balance").innerText = Balance.toFixed(2);
