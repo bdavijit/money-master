@@ -43,14 +43,19 @@ function ClickCalculate() {
    }else{
     let Expenses = stringTOFloat("Food") + stringTOFloat("Rent") + stringTOFloat("Clothes");
     Balance = stringTOFloat("Income") - Expenses;
+        //Error handling
+        if(Balance < 0){
+            alert("Your income is not allowed the expenses");
+         }else{
+            importByID("Total_Expenses").innerText = Expenses.toFixed(2);
+            importByID("Balance").innerText = Balance.toFixed(2);
+            
+            //input field clear
+            ClearField("Food");
+            ClearField("Rent");
+            ClearField("Clothes");
+         }
 
-    importByID("Total_Expenses").innerText = Expenses.toFixed(2);
-    importByID("Balance").innerText = Balance.toFixed(2);
-    
-    //input field clear
-    ClearField("Food");
-    ClearField("Rent");
-    ClearField("Clothes");
    }
 
 
@@ -66,7 +71,7 @@ function ClickSave() {
         
         //Error handling
         if(RemainingBalance < 0){
-           alert("Insufficient Balance")
+           alert("Insufficient Balance");
         }else{
           importByID("Remaining_Balance").innerText = RemainingBalance.toFixed(2);
         
