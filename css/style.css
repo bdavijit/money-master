@@ -1,3 +1,4 @@
+/* Nav text */
 .title {
   text-align: center;
   color: white;
@@ -5,6 +6,7 @@
   padding: 5px 0px;
 }
 
+/* grid layout design */
 .main_body {
   display: grid;
   grid-template-columns: repeat(1, 1fr) 0.7fr;
@@ -13,12 +15,7 @@
   max-width: 1200px;
   margin: auto;
 }
-/* #Picture{
-    background-color: aquamarine;
-}
-#Form{
-    background-color: rgb(255, 142, 127);
-} */
+/* mobile responsive */
 @media screen and (max-width: 800px) {
   .main_body {
     grid-template-columns: repeat(1, 1fr);

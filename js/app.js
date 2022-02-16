@@ -1,3 +1,4 @@
+// data collection
 function stringTOFloat(htmlID) {
   const html_ID = document.getElementById(htmlID);
   return parseFloat(html_ID.value);
@@ -13,6 +14,7 @@ function ClearField(htmlID) {
   html_ID.value = "";
 }
 
+// error handling
 function FindError(htmlID){
     let fieldValue = stringTOFloat(htmlID);
     if(isNaN(fieldValue)){
@@ -40,11 +42,12 @@ function ClickCalculate() {
 
    }else{
     let Expenses = stringTOFloat("Food") + stringTOFloat("Rent") + stringTOFloat("Clothes");
-    importByID("Total_Expenses").innerText = Expenses.toFixed(2);
     Balance = stringTOFloat("Income") - Expenses;
+
+    importByID("Total_Expenses").innerText = Expenses.toFixed(2);
     importByID("Balance").innerText = Balance.toFixed(2);
-    //
-    //   ClearField("Income");
+    
+    //input field clear
     ClearField("Food");
     ClearField("Rent");
     ClearField("Clothes");
@@ -60,12 +63,14 @@ function ClickSave() {
         let SavingAmount = stringTOFloat("Income") * (stringTOFloat("Save") / 100);
         let RemainingBalance = Balance - SavingAmount;
         importByID("Saving_Amount").innerText = SavingAmount.toFixed(2);
+        
         //Error
         if(RemainingBalance < 0){
            alert("Insufficient Balance")
         }else{
           importByID("Remaining_Balance").innerText = RemainingBalance.toFixed(2);
         
+        //   input field clear
           ClearField("Save");
         }
     }
