@@ -1,0 +1,31 @@
+.title {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+  padding: 5px 0px;
+}
+
+.main_body {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr) 0.7fr;
+  justify-items: center;
+  grid-gap: 10px;
+  max-width: 1200px;
+  margin: auto;
+}
+/* #Picture{
+    background-color: aquamarine;
+}
+#Form{
+    background-color: rgb(255, 142, 127);
+} */
+@media screen and (max-width: 800px) {
+  .main_body {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .title {
+
+    margin-bottom: 0px;
+
+  }
+}
