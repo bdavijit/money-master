@@ -64,7 +64,7 @@ function ClickSave() {
         let RemainingBalance = Balance - SavingAmount;
         importByID("Saving_Amount").innerText = SavingAmount.toFixed(2);
         
-        //Error
+        //Error handling
         if(RemainingBalance < 0){
            alert("Insufficient Balance")
         }else{
