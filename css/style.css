@@ -16,7 +16,7 @@
   margin: auto;
 }
 /* mobile responsive */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 842px) {
   .main_body {
     grid-template-columns: repeat(1, 1fr);
   }
