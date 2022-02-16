@@ -13,17 +13,26 @@ function ClearField(htmlID) {
   html_ID.value = "";
 }
 
+let Balance = 0;
 function ClickCalculate() {
   let Expenses = stringTOFloat("Food") + stringTOFloat("Rent") + stringTOFloat("Clothes");
   importByID("Total_Expenses").innerText = Expenses.toFixed(2);
-  importByID("Balance").innerText = (
-    stringTOFloat("Income") - Expenses
-  ).toFixed(2);
+  Balance = stringTOFloat("Income") - Expenses;
+  importByID("Balance").innerText = Balance.toFixed(2);
   //
-  ClearField("Income");
+  //   ClearField("Income");
   ClearField("Food");
   ClearField("Rent");
   ClearField("Clothes");
 }
 
-function ClickSave() {}
+function ClickSave() {
+  let SavingAmount = stringTOFloat("Income") * (stringTOFloat("Save") / 100);
+  let RemainingBalance = Balance - SavingAmount;
+//   console.log(stringTOFloat("Balance"));
+//   console.log(SavingAmount);
+  importByID("Saving_Amount").innerText = SavingAmount;
+  importByID("Remaining_Balance").innerText = RemainingBalance;
+
+  ClearField("Save");
+}
