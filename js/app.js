@@ -27,6 +27,7 @@ function FindError(htmlID){
     return false;
 }
 
+
 let Balance = 0;
 function ClickCalculate() {
 
@@ -67,8 +68,9 @@ function ClickSave() {
     }else{
         let SavingAmount = stringTOFloat("Income") * (stringTOFloat("Save") / 100);
         let RemainingBalance = Balance - SavingAmount;
+  
         importByID("Saving_Amount").innerText = SavingAmount.toFixed(2);
-        
+              
         //Error handling
         if(RemainingBalance < 0){
            alert("Insufficient Balance");

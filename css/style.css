@@ -2,7 +2,7 @@
 .title {
   text-align: center;
   color: white;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   padding: 5px 0px;
 }
 
@@ -11,12 +11,14 @@
   display: grid;
   grid-template-columns: repeat(1, 1fr) 0.7fr;
   justify-items: center;
+  align-items: center;
   grid-gap: 10px;
   max-width: 1200px;
   margin: auto;
 }
+
 /* mobile responsive */
-@media screen and (max-width: 842px) {
+@media screen and (max-width: 925px) {
   .main_body {
     grid-template-columns: repeat(1, 1fr);
   }
